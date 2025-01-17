@@ -1,5 +1,7 @@
 :root {
+    /* Colors */
     --black: #151515;
+    --black-secondary: #2f2f2f;
     --white: #f6f6f4;
     --yellow: #fff824;
     --yellow-secondary: #DFDA53;
@@ -9,9 +11,61 @@
     --blue-primary: #3665EA;
     --blue-secondary: #527AEB;
 
+    /* Background */
     background: var(--white);
 }
 
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Roboto, sans-serif;
+    color: var(--black);
+    margin: 0;
+}
+
+/* Typography */
+h1 {
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: -1.6px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 32px;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+h4 {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+h5 {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.body-bold {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.body-regular {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* Section Styles */
 .first-section {
     display: flex;
     justify-content: center;
@@ -28,107 +82,8 @@
     padding: 20px;
 }
 
-h1 {
-    font-family: Roboto;
-    font-weight: 600;
-    letter-spacing: -1.6px;
-    font-size: 40px;
-    color: var(--black);
-}
-
-h2 {
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 32px;
-    color: var(--black);
-}
-
-h3 {
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 24px;
-    color: var(--black);
-}
-
-h4 {
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 22px;
-    color: var(--black);
-}
-
-h5 {
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--black);
-}
-
-.body-bold {
-    font-family: Roboto;
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--black);
-}
-
-.body-regular {
-    font-family: Roboto;
-    font-weight: 400;
-    font-size: 16px;
-    color: var(--black);
-}
-
-
-
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    font-family: sans-serif;
-}
-
-.FAQ {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    font-family: sans-serif;
-    color: var(--black);
-}
-
-.primary-btn-blue {
-    /* Typography */
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.32px;
-    color: var(--white);
-
-    /* Layout */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 247px;
-    padding: 16px 40px;
-
-    /* Appearance */
-    background-color: var(--blue-primary);
-    border: none;
-    border-radius: 16px;
-
-    /* Miscellaneous */
-    line-height: normal;
-}
-
-
-.primary-btn-blue:hover {
-    background-color: var(--blue-secondary);
-    cursor: pointer;
-}
-
+/* Buttons */
+.primary-btn-blue,
 .primary-btn-yellow {
     /* Typography */
     font-family: Roboto, sans-serif;
@@ -137,7 +92,7 @@ footer {
     font-style: normal;
     line-height: normal;
     letter-spacing: -0.32px;
-    color: var(--black);
+    text-wrap: nowrap;
 
     /* Layout */
     display: flex;
@@ -147,31 +102,46 @@ footer {
     padding: 16px 40px;
 
     /* Appearance */
-    background-color: var(--yellow);
     border: none;
     border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 300ms ease-out;
 }
 
+.primary-btn-blue {
+    background-color: var(--blue-primary);
+    color: var(--white);
+}
+
+.primary-btn-blue:hover {
+    background-color: var(--blue-secondary);
+    
+}
+
+.primary-btn-yellow {
+    background-color: var(--yellow);
+    color: var(--black);
+}
 
 .primary-btn-yellow:hover {
     background-color: var(--yellow-secondary);
-    cursor: pointer;
 }
 
-
+/* Accordion */
 .faq-title {
     text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .accordion {
+    margin: 20px;
+}
+
+.accordion {
     border: 1px solid var(--grey-1);
     border-radius: 4px;
     margin-bottom: 10px;
     overflow: hidden;
-  }
-  
-  .accordion-summary {
+    box-shadow: var(--grey-1) 0px 1px 5px 0px;
+}
+
+.accordion-summary {
     background-color: #fff;
     color: var(--black);
     padding: 15px 20px;
@@ -179,21 +149,31 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .accordion-summary.expanded {
+}
+
+.accordion-summary.expanded {
     background-color: var(--grey-1);
-  }
-  
-  .accordion-details {
+}
+
+.accordion-details {
     padding: 20px;
     background-color: #fff;
-  }
-  
-  .icon {
+}
+
+.icon {
     transition: transform 0.3s ease;
-  }
-  
-  .icon.rotate {
+}
+
+.icon.rotate {
     transform: rotate(90deg);
-  }
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: sans-serif;
+    color: var(--black);
+}

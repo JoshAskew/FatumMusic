@@ -1,19 +1,33 @@
-import '../styles/index.css'
-import ArrowLeft from '../assets/ArrowLeftWhite.svg'
-import ArrowRight from '../assets/ArrowRightWhite.svg'
+import '../styles/index.css';
+import ArrowLeft from '../assets/ArrowLeftWhite.svg';
+import ArrowRight from '../assets/ArrowRightWhite.svg';
 
-const PrimaryBtn = ({ text }: { text: string }) => {
-    return (
-      <button className='primary-btn-blue'>
-        <img src={ArrowLeft} alt='arrow-left' style={
-          {marginRight: '10px'}
-       }/>
+interface PrimaryBtnProps {
+  text: string;
+  leftIcon?: string;  // Optional left icon
+  rightIcon?: string; // Optional right icon
+}
+
+const PrimaryBtn: React.FC<PrimaryBtnProps> = ({ text, leftIcon, rightIcon }) => {
+  return (
+    <button className="primary-btn-blue">
+      {leftIcon && (
+        <img 
+          src={ArrowLeft} 
+          alt="left-icon" 
+          style={{ marginRight: '10px' }} 
+        />
+      )}
       {text}
-       <img src={ArrowRight} alt='arrow-right' style={
-          {marginLeft: '10px'}
-       } />
-      </button>
-    );
-  };
+      {rightIcon && (
+        <img 
+          src={ArrowRight} 
+          alt="right-icon" 
+          style={{ marginLeft: '10px' }} 
+        />
+      )}
+    </button>
+  );
+};
 
-    export default PrimaryBtn;
+export default PrimaryBtn;

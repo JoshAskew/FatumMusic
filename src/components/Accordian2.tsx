@@ -27,7 +27,7 @@ const Accordion = ({
 };
 
 export default function CustomizedAccordions() {
-  const [expanded, setExpanded] = useState<string | null>('panel1');
+  const [expanded, setExpanded] = useState<string | null>('panel');
 
   const handleToggle = (panel: string) => {
     setExpanded(expanded === panel ? null : panel);
