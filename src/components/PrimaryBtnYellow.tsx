@@ -1,20 +1,33 @@
-import '../styles/index.css'
-import ArrowRight from '../assets/ArrowRightBlack.svg'
-import ArrowLeft from '../assets/ArrowLeftBlack.svg'
+import '../styles/index.css';
+import ArrowRight from '../assets/ArrowRightBlack.svg';
+import ArrowLeft from '../assets/ArrowLeftBlack.svg';
 
+interface PrimaryBtnYellowProps {
+  text: string;
+  leftIcon?: string;  // Optional left icon
+  rightIcon?: string; // Optional right icon
+}
 
-const PrimaryBtnYellow = ({ text }: { text: string }) => {
-    return (
-      <button className='primary-btn-yellow'>
-         <img src={ArrowLeft} alt='arrow-left' style={
-          {marginRight: '10px'}
-       }/>
+const PrimaryBtnYellow: React.FC<PrimaryBtnYellowProps> = ({ text, leftIcon, rightIcon }) => {
+  return (
+    <button className="primary-btn-yellow">
+      {leftIcon && (
+        <img 
+          src={ArrowLeft} 
+          alt="left-icon" 
+          style={{ marginRight: '10px' }} 
+        />
+      )}
       {text}
-       <img src={ArrowRight} alt='arrow-right' style={
-          {marginLeft: '10px'}
-       } />
-      </button>
-    );
-  };
+      {rightIcon && (
+        <img
+          src={ArrowRight}
+          alt="right-icon"
+          style={{ marginLeft: '10px' }}
+        />
+      )}
+    </button>
+  );
+};
 
-    export default PrimaryBtnYellow;
+export default PrimaryBtnYellow;
