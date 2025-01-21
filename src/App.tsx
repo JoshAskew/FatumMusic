@@ -12,13 +12,10 @@ function App() {
 
   return (
     <>
-    <section className='first-section'>
       <Tagline />
-      </section>
       <br/>
-      <PrimaryBtnYellow text='Eleveate Your Production' leftIcon={ArrowLeft} rightIcon={ArrowRight}/>
+      <PrimaryBtnYellow text='Button Content' leftIcon={ArrowLeft} rightIcon={ArrowRight}/>
       <br/>
-      
       <PrimaryBtnBlue text="Button Content" leftIcon={ArrowLeft} rightIcon={ArrowRight}/>
       <Accordian />
       <Accordian2 />
