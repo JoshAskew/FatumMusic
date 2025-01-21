@@ -12,14 +12,15 @@
     --blue-secondary: #527AEB;
 
     /* Background */
-    background: var(--white);
+    background: white;
 }
 
 /* Global Styles */
 body {
     margin: 0;
     padding: 0;
-    font-family: Roboto, sans-serif;
+    font-family: Helvetica;
+
 }
 
 h1, h2, h3, h4, h5 {
@@ -66,33 +67,82 @@ h5 {
 }
 
 /* Section Styles */
-.first-section {
+
+.background-svg {
+    position: absolute; /* Position the SVG behind the content */
+    top: 50%; /* Adjust position to center it */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the SVG */
+    z-index: 0; /* Ensure it's behind the content */
+    width: 100%; /* Adjust size as needed */
+    height: 100%; /* Maintain aspect ratio */
+  }
+
+.hero {
+    margin:20px;
+    padding: 100px;
+    background-color: var(--white);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--yellow);
-    padding: 20px;
-    margin-top: 30px;
+    overflow: none;
 }
 
-.tagline {
-    font-size: 1.5rem;
+.stop-span{
+    font-weight:900;
+}
+
+.highlight-span {
+    position: relative; /* Needed for pseudo-element positioning */
+    display: inline; /* Ensure the text wraps normally */
+    z-index: 1; /* Text stays above the background */
+  }
+  
+  .highlight-span::before {
+    content: ''; /* Creates the background effect */
+    position: absolute;
+    top: 12px; /* Position the highlight relative to the text */
+    left: -10px; /* Extend slightly beyond the text */
+    right: -10px; /* Extend slightly beyond the text */
+    bottom: 0;
+    background: var(--yellow); /* Highlight color */
+    z-index: -1; /* Place behind the text */
+    transform: skew(-10deg, -5deg); /* Skew diagonally */
+    height: 72%; /* Make the background taller than the text */
+    width: calc(100% + 20px); /* Extend background width */
+    border-radius: 4px; /* Optional: round the edges slightly */
+  }
+  
+  
+.tagline-h1 {
+    font-weight: 400;
+    text-align: center;
+    display: block;
+    margin: 20px;
+    font-size: 40px;
     color: var(--black);
     font-family: sans-serif;
     padding: 20px;
+    z-index: 1;
 }
 
-/* Buttons */
-.primary-btn-blue,
+.video-place-holder{
+    z-index: 1;
+    width: 70%;
+}
+
+/* Shared Styles for Both Buttons */
+.primary-btn-blue, 
 .primary-btn-yellow {
     /* Typography */
     font-family: Roboto, sans-serif;
     font-size: 16px;
     font-weight: 500;
-    font-style: normal;
     line-height: normal;
     letter-spacing: -0.32px;
     text-wrap: nowrap;
+    z-index: 1;
 
     /* Layout */
     display: flex;
@@ -108,6 +158,16 @@ h5 {
     transition: background-color 300ms ease-out;
 }
 
+/* Icon Animation */
+.primary-btn-yellow img {
+    transition: transform 0.3s ease;
+}
+
+.primary-btn-yellow:hover img:last-of-type {
+    transform: translateX(5px); /* Move the right icon slightly to the right */
+}
+
+/* Specific Button Colors */
 .primary-btn-blue {
     background-color: var(--blue-primary);
     color: var(--white);
@@ -115,12 +175,12 @@ h5 {
 
 .primary-btn-blue:hover {
     background-color: var(--blue-secondary);
-    
 }
 
 .primary-btn-yellow {
     background-color: var(--yellow);
     color: var(--black);
+    box-shadow: 0px 4px 4px var(--grey-1);
 }
 
 .primary-btn-yellow:hover {
