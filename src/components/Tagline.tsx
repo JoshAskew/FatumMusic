@@ -1,4 +1,4 @@
-import PlaceHolder from '../assets/VideoPlaceHolder.png';
+
 import PrimaryBtnBlue from './PrimaryBtnBlue';
 import ArrowRight from '../assets/ArrowRightBlack.svg';
 import Logo from '../assets/Fatum-TDJB Logo.svg'
@@ -18,7 +18,16 @@ function Tagline() {
       </div>
       <PrimaryBtnBlue className='cta-1' rightIcon={ArrowRight} text='Scale my music career' />
       <br/>
-      <img src={PlaceHolder} alt="Video Place Holder" className="video-place-holder" />
+      <div className="video-container">
+        <iframe className='video-container'
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/mOYZaiDZ7BM"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
       <div className='avatar-container'>
       <AvatarGroup spacing="small">
   <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
