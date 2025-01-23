@@ -109,8 +109,11 @@ h5 {
 /* Section Styles */
 
 .logo {
-    display: absolute;
-    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width:16%;
 }
 
 .hero {
@@ -199,13 +202,11 @@ h5 {
     margin: 0 0 40px 0;
 }
 
-.video-place-holder {
+.video-container {
     display: flex;
-    width: 70%;
-    padding: 10px;
+    width: 75%;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     border-radius: 16px;
 }
 
