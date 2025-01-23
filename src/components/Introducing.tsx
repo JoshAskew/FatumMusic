@@ -1,15 +1,15 @@
-import Frame from '../assets/Frame1.svg'
+
 import Card from '../components/RoadmapCard.tsx'
 import Ellipse from '../assets/Ellipse4.svg'
 import PrimaryBtnBlue from './PrimaryBtnBlue.tsx';
 import ArrowRight from '../assets/ArrowRightBlack.svg';
-
+import Idea from '../assets/idea.png'
 
 function Introducing() {
   return (
     <div className='introducing'>
-     <img className='banner-img' src={Frame} alt='Frame' />  
-        <h1 className='introducing-h1'>Introducing the Instagram <span className='accelerator-span'>Accelerator</span> Masterclass</h1>
+     <img className='banner-img' src={Idea} alt='Frame' />  
+        <h1 className='introducing-h1'>Introducing the Instagram &nbsp;<span className='highlight-accelerator'>Accelerator</span>&nbsp; Masterclass</h1>
        <h3 className='introducing-h3'>Your Roadmap from Struggling Artist to Industry Stand-out</h3>
        <h5 className='introducing-h5'>A proven 5-stage framework that turns your Instagram into a career-launching platform (even if you're starting from zero)</h5>
        <div className='card-container'>
