@@ -6,10 +6,12 @@ interface PrimaryBtnProps {
   text: string;
   leftIcon?: string;  // Optional left icon
   rightIcon?: string; // Optional right icon
+  className?: string; // Optional class name
 }
 
-const PrimaryBtn: React.FC<PrimaryBtnProps> = ({ text, leftIcon, rightIcon }) => {
+const PrimaryBtn: React.FC<PrimaryBtnProps> = ({ text, leftIcon, rightIcon, className }) => {
   return (
+    <div className={className}>
     <button className="primary-btn-blue">
       {leftIcon && (
         <img 
@@ -27,6 +29,7 @@ const PrimaryBtn: React.FC<PrimaryBtnProps> = ({ text, leftIcon, rightIcon }) =>
         />
       )}
     </button>
+    </div>
   );
 };
 
