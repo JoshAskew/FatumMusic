@@ -674,7 +674,6 @@ footer {
     font-size: 40px;
     letter-spacing: -1.12px;
     line-height: 50px;
-    font-size: 40px;
 }
 
 .video-container {
@@ -719,12 +718,24 @@ footer {
     justify-content: center;
     padding: 16px 7px;
     align-self: stretch;
-   
     
 }
 
+.logo {
+   width: 200px;
 }
 
+.primary-btn-blue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+}
 
 .timer-container {
     position: fixed;      /* Fixes the element to the screen */

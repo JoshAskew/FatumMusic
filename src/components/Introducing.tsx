@@ -31,7 +31,7 @@ function Introducing() {
       </div>
       <div className='path-container'>
         <h5 className='path-h5'>Growing on Instagram Is Simpler Than You Think</h5>
-        <PrimaryBtnBlue rightIcon={ArrowRight} text='Start my transformation' />
+        <PrimaryBtnBlue className='path-btn'rightIcon={ArrowRight} text='Start my transformation' />
         </div>
     </div>
   );
