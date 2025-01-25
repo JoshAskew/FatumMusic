@@ -40,7 +40,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Source Sans 3";
-
 }
 
 body,
@@ -210,11 +209,6 @@ h5 {
     border-radius: 16px;
 }
 
-.rating {
-    margin-top: 50px;
-    margin-bottom: 5px;
-}
-
 .avatar-container {
     display: flex;
     justify-content: center;
@@ -241,7 +235,7 @@ h5 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 88px 48px 88px 48px;
+    margin: 108px 48px 88px 48px;
     box-sizing: border-box;
 }
 
@@ -337,10 +331,14 @@ h5 {
 
 .banner-img {
     display: flex;
-    width: 100%; /* Make the width responsive */
-    max-width: 1000px; /* Ensure it doesn't get wider than 1000px */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 416px; /* Limit the height to 416px */
+    width: 100%;
+    /* Make the width responsive */
+    max-width: 1000px;
+    /* Ensure it doesn't get wider than 1000px */
+    height: auto;
+    /* Maintain aspect ratio */
+    max-height: 416px;
+    /* Limit the height to 416px */
     justify-content: center;
     align-items: center;
     border-radius: 16px;
@@ -356,7 +354,7 @@ h5 {
     align-items: center;
     border-radius: 20px;
     box-shadow: 10px 10px 35px var(--grey-01-tertiary);
-    
+
 }
 
 .introducing-h1 {
@@ -381,7 +379,7 @@ h5 {
     text-underline-position: from-font;
 }
 
-.highlight-accelerator{
+.highlight-accelerator {
     position: relative;
     /* Needed for pseudo-element positioning */
     display: inline-block;
@@ -436,6 +434,7 @@ h5 {
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.32px;
+    margin-bottom: 16px;
 }
 
 .card-container {
@@ -443,7 +442,7 @@ h5 {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    margin: 40px 0 40px 0;
+    margin: 40px 0;
     width: 90%
 }
 
@@ -482,7 +481,7 @@ h5 {
 
 .path-container {
     display: flex;
-    padding: 16px 0px;
+    padding: 16px 16px;
     justify-content: center;
     align-items: center;
     gap: 24px;
@@ -586,7 +585,6 @@ h5 {
 .mini-btn-yellow {
     background-color: var(--yellow);
     color: var(--black);
-    box-shadow: 0px 4px 4px var(--grey-01-primary);
 }
 
 .primary-btn-yellow:hover,
@@ -646,7 +644,69 @@ footer {
     color: var(--black);
 }
 
-/* Media Queries */
+.timer-container {
+    position: fixed;
+    width: auto;
+    max-width: 100%;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    /* Centers items vertically */
+    gap: 10px;
+    /* Adds spacing between the heading and the clock */
+    text-align: left;
+    font-family: "Source Sans 3";
+    z-index: 1;
+    background-color: var(--black);
+    padding: 10px;
+    border-radius: 16px;
+}
+
+.timer-h2 {
+    font-size: 24px;
+    margin: 0;
+    white-space: nowrap;
+    font-family: "source sans 3";
+}
+
+.timer-clock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* Spacing between squares */
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--yellow-tertiary);
+    color: var(--black);
+    border-radius: 16px;
+    width: 60px;
+    /* Adjust size as needed */
+    height: 60px;
+    font-family: "Source Sans 3";
+}
+
+.time-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--black);
+    font-family: "Source Sans 3";
+}
+
+.time-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black);
+    font-family: "Source Sans 3";
+}
+
+/* -----------------------------------------Media Queries------------------------------------------ */
 
 /* Mobile */
 
@@ -660,91 +720,112 @@ footer {
         width: 90%;
     }
 
-.card-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin: 40px 0 40px 0;
-    width: 90%
-}
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin: 40px 0 40px 0;
+        width: 90%
+    }
 
-.tagline-h1 {
-    font-size: 40px;
-    letter-spacing: -1.12px;
-    line-height: 50px;
-}
+    .tagline-h1 {
+        font-size: 40px;
+        letter-spacing: -1.12px;
+        line-height: 50px;
+    }
 
-.video-container {
-    display: flex;
-    width: 100%;
-    height: 200px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-}
+    .video-container {
+        display: flex;
+        width: 100%;
+        height: 200px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+    }
 
-.avatar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 0 0 0;
-    width: 100%;
-}
+    .avatar-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0 0 0;
+        width: 100%;
+    }
 
-.avatar-text {
-    margin: 0 0 0 10px;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: -.32px;
-}
+    .avatar-text {
+        margin: 0 0 0 10px;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: -.32px;
+    }
 
-.introducing-h1 {
-    font-size: 40px;
-    letter-spacing: -0.8px;
-}
+    .introducing-h1 {
+        font-size: 40px;
+        letter-spacing: -0.8px;
+    }
 
-.accelerator-highlight {
-    font-weight: 700;
+    .accelerator-highlight {
+        font-weight: 700;
 
-}
+    }
 
-.path-container {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 7px;
-    align-self: stretch;
-    
-}
+    .path-container {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 7px;
+        align-self: stretch;
 
-.logo {
-   width: 200px;
-}
+    }
 
-.primary-btn-blue {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    border-radius: 16px;
-    cursor: pointer;
-    font-size: 14px;
-}
+    .logo {
+        width: 200px;
+    }
 
-}
+    .primary-btn-blue {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        border-radius: 16px;
+        cursor: pointer;
+        font-size: 14px;
+    }
 
-.timer-container {
-    position: fixed;      /* Fixes the element to the screen */
-    bottom: 0;            /* Positions it at the bottom */
-    left: 0;              /* Ensures it spans the full width */
-    width: 100%;          /* Ensures it takes up the full width */
-    margin: 0;            /* Remove margin */
-    padding: 10px;        /* Optional: add padding if you want space inside */
-    background-color: rgba(0, 0, 0, 0.7); /* Optional: background for visibility */
-    color: white;         /* Optional: text color */
-    text-align: center;   /* Optional: centers the text */
+
+
+    .timer-container {
+        flex-direction: column;
+        /* Stack heading and clock vertically */
+        gap: 8px;
+        /* Adjust spacing between heading and clock */
+        padding: 6px;
+        /* Further reduce padding */
+        width: auto;
+        /* Allow container to fit within screen */
+
+    }
+
+    .timer-h2 {
+        font-size: 18px;
+        /* Smaller heading */
+    }
+
+    .timer-clock {
+        gap: 5px;
+        /* Reduce gap between time units */
+    }
+
+    .time-unit {
+        width: 40px;
+        /* Smaller time unit box */
+        height: 40px;
+        font-size: 12px;
+        /* Smaller font for values */
+        border-radius: 8px;
+        padding: 5px;
+    }
 }
