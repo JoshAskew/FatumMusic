@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import '../styles/index.css';
+import YellowButtonMini from './YellowButtonMini';
+import ArrowRight from '../assets/ArrowRightWhite.svg';
 
 const Timer = () => {
   // Function to get the target time (1 week from now)
@@ -42,12 +44,25 @@ const Timer = () => {
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   return (
-    <div className='timer-container'>
-      <h2>Special Offer Ends Soon</h2>
-      <div>
-        <p>
-          {days} days {hours} hours {minutes} minutes {seconds} seconds
-        </p>
+    <div className="timer-container">
+      <YellowButtonMini text="Special Offer Ends Soon" rightIcon={ArrowRight} />
+      <div className="timer-clock">
+        <div className="time-unit">
+          <span className="time-value">{days}</span>
+          <span className="time-label">Day(s)</span>
+        </div>
+        <div className="time-unit">
+          <span className="time-value">{hours}</span>
+          <span className="time-label">Hrs</span>
+        </div>
+        <div className="time-unit">
+          <span className="time-value">{minutes}</span>
+          <span className="time-label">Min</span>
+        </div>
+        <div className="time-unit">
+          <span className="time-value">{seconds}</span>
+          <span className="time-label">Sec</span>
+        </div>
       </div>
     </div>
   );
