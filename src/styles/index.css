@@ -710,7 +710,7 @@ footer {
 
 /* Mobile */
 
-@media (max-width: 768px) {
+@media (max-width: 835px) {
 
     .tagline-container {
         display: flex;
@@ -789,7 +789,7 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 200px;
+        width: 180px;
         border-radius: 16px;
         cursor: pointer;
         font-size: 14px;
