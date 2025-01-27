@@ -1,11 +1,14 @@
 :root {
     /* Black Shades */
     --black: #151515;
+    --static-black: #151515;
     --black-secondary: #2f2f2f;
     --black-tertiary: #464646;
+    --primary-color: #2f2f2f;
 
     /* White Shades */
     --white: #f6f6f4;
+    --static-white: #f6f6f4;
     --white-tertiary: #ededed;
 
     /* Yellow Shades */
@@ -33,6 +36,57 @@
 
     /* Background */
     background: white;
+}
+
+.dark-mode {
+    /* Black Shades */
+    --black: #f6f6f4; /* Swapped with --white */
+    --black-secondary: #ededed; /* Swapped with --white-tertiary */
+    --black-tertiary: #d1d7de; /* Swapped with a lighter grey shade */
+
+    /* White Shades */
+    --white: #464646; /* Swapped with --black */
+    --white-tertiary: #2f2f2f; /* Swapped with --black-secondary */
+
+    /* Yellow Shades */
+    --yellow: #fff824; /* Same as light mode for consistency */
+    --yellow-secondary: #FFFB8E; /* Same as light mode */
+    --yellow-tertiary: #FFFDC7; /* Same as light mode */
+
+    /* Grey Shades */
+    --grey-01-primary: #464646; /* Swapped with --black-tertiary */
+    /* Lightest Grey */
+    --grey-01-secondary: #2f2f2f; /* Darker grey for a muted look */
+    --grey-01-tertiary: #151515; /* Matches the dark background */
+    --grey-02-primary: #818c98; /* Inverted with --grey-03-tertiary */
+    /* Medium Grey */
+    --grey-02-secondary: #77818c; /* Swapped with --grey-03-secondary */
+    --grey-02-tertiary: #67727e; /* Matches --grey-03-primary */
+    --grey-03-primary: #bec5ce; /* Swapped with --grey-02-tertiary */
+    /* Darker Grey */
+    --grey-03-secondary: #b2bac3; /* Swapped with --grey-02-secondary */
+    --grey-03-tertiary: #a5adb6; /* Matches --grey-02-primary */
+
+    /* Blue Shades */
+    --blue-primary: #3665EA; /* Same */
+    --blue-secondary: #527AEB; /* Same*/
+
+    /* Background */
+    background: #151515; /* Dark background */
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: -10px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+   
+  
+  
+    cursor: pointer;
 }
 
 /* Global Styles */
@@ -113,6 +167,7 @@ h5 {
     align-items: center;
     margin-top: 50px;
     width: 16%;
+    color: var(--black);
 }
 
 .hero {
@@ -137,6 +192,7 @@ h5 {
     display: inline-block;
     /* Ensure the text wraps normally */
     font-weight: 700;
+    color:var(--static-black);
 }
 
 .highlight-span::before {
@@ -156,12 +212,13 @@ h5 {
     /* Place behind the text */
     transform: skew(-10deg, -5deg);
     /* Skew diagonally */
-    height: 72%;
+    height: 90%;
     /* Make the background taller than the text */
     width: calc(100% + 20px);
     /* Extend background width */
     border-radius: 4px;
     /* Optional: round the edges slightly */
+    color: var(--static-black);
 }
 
 
@@ -176,6 +233,7 @@ h5 {
     letter-spacing: -1.12px;
     line-height: 70px;
     font-size: 56px;
+    font-family: "Open Sans";
 }
 
 .tagline-container {
@@ -226,6 +284,7 @@ h5 {
     font-size: 16px;
     font-weight: 400;
     letter-spacing: -.32px;
+    color: var(--black);
 }
 
 /* Recognition */
@@ -242,7 +301,7 @@ h5 {
 .recognition-h1 {
     color: var(--black);
     text-align: center;
-    font-family: "Source Sans 3";
+    font-family: "Open Sans";
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
@@ -250,57 +309,93 @@ h5 {
     letter-spacing: -0.8px;
 }
 
-.deserves-span {
-    color: #000;
-    font-family: "Source Sans 3";
-    font-size: 40px;
-    font-style: normal;
+.highlight-deserves {
+    position: relative;
+    /* Needed for pseudo-element positioning */
+    display: inline-block;
+    /* Ensure the text wraps normally */
     font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.8px;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: auto;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
+    z-index: 1;
+    color:var(--static-black)
+}
+
+.highlight-deserves::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    right: -10px;
+    bottom: 0;
+    background: var(--yellow);
+    z-index: -1;
+    transform: skew(-10deg, -5deg);
+    height: 85%;
+    width: calc(100% + 11px);
+    border-radius: 4px;
 }
 
 .recognition-content {
     display: flex;
     align-items: flex-start;
-    /* Align image and text to the top */
     gap: 16px;
-    /* Add some spacing between the image and text */
     margin-bottom: 24px;
-    /* Add spacing between list items */
 }
 
+.ellipse-wrapper {
+    position: relative;
+    /* Set the parent container to relative */
+    width: fit-content;
+    /* Ensure it wraps around the content */
+    height: fit-content;
+}
 
 .recognition-ellipse {
-    height: auto;
+    display: flex; /* Use Flexbox for centering */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    width: 32px; /* Diameter of the ellipse */
+    height: 32px; /* Diameter of the ellipse */
+    border-radius: 50%; /* Makes it a perfect circle */
+    background-color: var(--yellow-secondary);
+    position: relative; /* Ensures it’s positioned relative to its parent */
+}
+
+.recognition-eyeglass {
+    width: 20px; /* Size of the eyeglass image */
+    height: 20px;
+    pointer-events: none; /* Prevents interaction with the image */
     flex-shrink: 0;
-    /* Prevent the image from shrinking */
+}
+
+.recognition-graph {
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.recognition-watch {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    flex-shrink: 0;
 }
 
 .recognition-h5 {
-    color: var(--black);
-    font-family: "Source Sans 3";
-    font-size: 20px;
+    font-size: 24px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     line-height: normal;
-    letter-spacing: -0.4px;
-    margin-bottom: 5px;
+    margin-bottom: 9px;
 }
 
 .recognition-p1 {
     margin-bottom: 56px;
+    font-size: 16px;
+    color: var(--black);
 }
 
 .recognition-p {
-    color: var(--black);
-    font-family: "Source Sans 3";
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -314,6 +409,8 @@ h5 {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    font-family: "Source Sans 3";
+    color: var(--black);
 }
 
 
@@ -342,6 +439,7 @@ h5 {
     justify-content: center;
     align-items: center;
     border-radius: 16px;
+    margin-bottom:20px;
 }
 
 .introducing {
@@ -360,7 +458,7 @@ h5 {
 .introducing-h1 {
     color: var(--black);
     text-align: center;
-    font-family: "Source Sans 3";
+    font-family: "Open Sans";
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
@@ -386,13 +484,14 @@ h5 {
     /* Ensure the text wraps normally */
     font-weight: 700;
     z-index: 1;
+    color: var(--static-black);
 }
 
 .highlight-accelerator::before {
     content: '';
     /* Creates the background effect */
     position: absolute;
-    top: 12px;
+    top: 8px;
     /* Position the highlight relative to the text */
     left: -10px;
     /* Extend slightly beyond the text */
@@ -405,7 +504,7 @@ h5 {
     /* Place behind the text */
     transform: skew(-10deg, -5deg);
     /* Skew diagonally */
-    height: 72%;
+    height: 80%;
     /* Make the background taller than the text */
     width: calc(100% + 20px);
     /* Extend background width */
@@ -460,7 +559,7 @@ h5 {
 }
 
 .card-header {
-    color: var(--black);
+    color: var(--static-black);
     font-family: "source sans 3";
     font-size: 20px;
     font-style: normal;
@@ -470,7 +569,7 @@ h5 {
 }
 
 .card-text {
-    color: var(--black);
+    color: var(--static-black);
     font-family: "source sans 3";
     font-size: 16px;
     font-style: normal;
@@ -491,7 +590,7 @@ h5 {
 }
 
 .path-h5 {
-    color: var(--black);
+    color: var(--static-black);
     font-family: "Source Sans 3";
     font-size: 20px;
     font-style: normal;
@@ -573,7 +672,7 @@ h5 {
 .primary-btn-blue,
 .mini-btn-blue {
     background-color: var(--blue-primary);
-    color: var(--white);
+    color: var(--static-white);
 }
 
 .primary-btn-blue:hover,
@@ -683,7 +782,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--yellow-tertiary);
+    background-color: white;
     color: var(--black);
     border-radius: 16px;
     width: 60px;
@@ -708,8 +807,42 @@ footer {
 
 /* -----------------------------------------Media Queries------------------------------------------ */
 
-/* Mobile */
+@media (max-width: 1110px) {
+    .timer-container {
+        flex-direction: column;
+        /* Stack heading and clock vertically */
+        gap: 8px;
+        /* Adjust spacing between heading and clock */
+        padding: 6px;
+        /* Further reduce padding */
+        width: auto;
+        /* Allow container to fit within screen */
 
+    }
+
+    .timer-h2 {
+        font-size: 18px;
+        /* Smaller heading */
+    }
+
+    .timer-clock {
+        gap: 5px;
+        /* Reduce gap between time units */
+    }
+
+    .time-unit {
+        width: 40px;
+        /* Smaller time unit box */
+        height: 40px;
+        font-size: 12px;
+        /* Smaller font for values */
+        border-radius: 8px;
+        padding: 5px;
+    }
+
+}
+
+/* --------------------Mobile-------------------- */
 @media (max-width: 835px) {
 
     .tagline-container {
@@ -795,37 +928,4 @@ footer {
         font-size: 14px;
     }
 
-
-
-    .timer-container {
-        flex-direction: column;
-        /* Stack heading and clock vertically */
-        gap: 8px;
-        /* Adjust spacing between heading and clock */
-        padding: 6px;
-        /* Further reduce padding */
-        width: auto;
-        /* Allow container to fit within screen */
-
-    }
-
-    .timer-h2 {
-        font-size: 18px;
-        /* Smaller heading */
-    }
-
-    .timer-clock {
-        gap: 5px;
-        /* Reduce gap between time units */
-    }
-
-    .time-unit {
-        width: 40px;
-        /* Smaller time unit box */
-        height: 40px;
-        font-size: 12px;
-        /* Smaller font for values */
-        border-radius: 8px;
-        padding: 5px;
-    }
 }
