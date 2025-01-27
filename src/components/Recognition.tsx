@@ -1,5 +1,5 @@
 
-import Eyeglass from '../assets/eyeglasses.svg';
+import Eyeglass from '../assets/Eyeglasses.svg';
 import Graph from '../assets/graph.svg';
 import Watch from '../assets/watch.svg';
 
